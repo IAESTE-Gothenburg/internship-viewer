@@ -5,7 +5,7 @@ body {
 
 article {
   min-height: 100vh;
-  background-color: #373737;
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: 1000;
   display: none;
   position: absolute;
@@ -16,7 +16,7 @@ article {
     position: fixed;
     top: 15px;
     left: 15px;
-    color: white; }
+    color: rgba(120, 120, 120, 0.6); }
   article img {
     width: 85%; }
 
@@ -31,7 +31,10 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  flex-wrap: nowrap; }
+  flex-wrap: nowrap;
+  position: fixed;
+  top: 0;
+  z-index: 10; }
   main h1 {
     text-align: center;
     width: 80%;
@@ -44,9 +47,11 @@ main {
   align-items: center; }
 
 footer {
+  position: fixed;
   bottom: 0;
   height: 10vh;
-  background-color: rgba(255, 250, 250, 0.8); }
+  background-color: snow;
+  z-index: 100; }
   footer nav {
     margin: auto;
     width: 98%;
@@ -59,7 +64,7 @@ footer {
       margin: 0 7px;
       padding: 2px 0;
         padding-top: 4px;
-      background: rgba(255, 250, 250, 0.8); }
+      background: snow; }
       footer nav .nav-button img {
         height: 6vh; }
       footer nav .nav-button h6 {
@@ -67,7 +72,7 @@ footer {
         margin-top: 2px;
         margin-bottom: 2px; }
     footer nav .active-nav {
-      background: rgba(50, 50, 50, 0.1);
+      background: rgba(50, 50, 50, 0.2);
       border-radius: 5px; }
 
 .internship {
