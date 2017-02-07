@@ -52,6 +52,10 @@ function addInternships(target, section) {
 		container.appendChild(image);
 		mainContent.appendChild(container);
 	}
+	if (internships.length == 0) {
+		var text = 'Finns inga internships relaterade till den här utbildningen just nu men återkom snart så kanske det finns!';
+		addTextElement('h1', text, mainContent)
+	}
 	for (var i = 0; i < navButtons.length; i++) {
 		navButtons[i].classList.remove('active-nav');
 	}
