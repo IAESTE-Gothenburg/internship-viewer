@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  background-color: rgba(0, 128, 204, 0.1); }
+
+article {
+  min-height: 100vh;
+  background-color: #373737;
+  z-index: 1000;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center; }
+  article i {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    color: white; }
+  article img {
+    width: 85%; }
+
+main, article {
+  overflow: scroll; }
+
+main, footer, article {
+  width: 100%; }
+
+main {
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+footer {
+  bottom: 0;
+  height: 10vh;
+  background-color: rgba(255, 250, 250, 0.8); }
+  footer nav {
+    margin: auto;
+    width: 98%;
+    height: inherit; }
+    footer nav .nav-button {
+      color: inherit;
+      width: 18%;
+      height: 100%;
+      border: none;
+      margin: 0 7px;
+      padding: 2px 0;
+        padding-top: 4px;
+      background: rgba(255, 250, 250, 0.8); }
+      footer nav .nav-button img {
+        height: 6vh; }
+      footer nav .nav-button h6 {
+        font-size: 1em;
+        margin-top: 2px;
+        margin-bottom: 2px; }
+    footer nav .active-nav {
+      background: rgba(50, 50, 50, 0.1);
+      border-radius: 5px; }
+
+.internship {
+  height: 90vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .internship img {
+    height: 85vh;
+    margin-left: 10px;
+    margin-right: 10px; }
+
+/*# sourceMappingURL=style.css.map */
