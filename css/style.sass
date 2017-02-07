@@ -49,22 +49,19 @@ main
 		position: relative
 		left: 10%
 
-.container
-	display: flex
-	justify-content: center
-	align-items: center
-
-
 footer
 	position: fixed
 	bottom: 0
 	height: 10vh
 	background-color: $theme-color
 	z-index: 100
-	nav
+	nav.container
+		display: flex
+		align-items: center
 		margin: auto
 		width: 98%
 		height: inherit
+		overflow: scroll
 		.nav-button
 			color: inherit
 			width: 18%
