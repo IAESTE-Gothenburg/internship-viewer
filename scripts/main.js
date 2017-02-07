@@ -1,18 +1,3 @@
-const A = [];
-const AE = [];
-const D = [];
-const E = ['AT-2017-5003LZ.jpg', 'AT-2017-5003LZ.jpg', 'AT-2017-5003LZ.jpg', 'AT-2017-5003LZ.jpg', 'AT-2017-5003LZ.jpg'];
-const Fbw = [];
-const H = [];
-const I = [];
-const IT = [];
-const K = [];
-const KfKb = [];
-const M = [];
-const S = [];
-const TD = [];
-const V = [];
-const Z = [];
 
 const PATH = 'images/internships/'
 
@@ -99,20 +84,8 @@ function getInternships(section) {
 	}
 }
 
-function displayInternship(event) {
-	display.style.display = 'flex';
-	image.src = event.target.src;
-}
 
-function hideInternship() {
-	display.style.display = 'none'
-}
 
-function addTextElement(type, text, appendTo) {
-	var element = document.createElement(type);
-	var textNode = document.createTextNode(text)
-	element.appendChild(textNode);
-	appendTo.appendChild(element);
-}
+
 
 

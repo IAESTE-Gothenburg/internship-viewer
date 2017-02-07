@@ -33,7 +33,10 @@ main {
   align-items: center;
   flex-wrap: nowrap; }
   main h1 {
-    text-align: center; }
+    text-align: center;
+    width: 80%;
+    position: relative;
+    left: 10%; }
 
 .container {
   display: flex;

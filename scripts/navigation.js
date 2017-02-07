@@ -1,4 +1,3 @@
-const SECTIONS = ['A', 'AE', 'D', 'E', 'Fbw', 'H', 'I', 'IT', 'K', 'KfKb', 'M', 'S', 'TD', 'V', 'Z'];
 
 function addNavButtons() {
 	for (var i = 0; i < SECTIONS.length; i++) {
@@ -16,3 +15,18 @@ function addNavButtons() {
 	}
 }
 
+function addTextElement(type, text, appendTo) {
+	var element = document.createElement(type);
+	var textNode = document.createTextNode(text)
+	element.appendChild(textNode);
+	appendTo.appendChild(element);
+}
+
+function displayInternship(event) {
+	display.style.display = 'flex';
+	image.src = event.target.src;
+}
+
+function hideInternship() {
+	display.style.display = 'none'
+}
