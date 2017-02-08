@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 function addInternships(target, section) {
 	mainContent.innerHTML = '';
+	mainContent.scrollLeft = 0;
 	var internships = getInternships(section);
 	internships = internships.concat(OTHER);
 	for (var i = 0; i < internships.length; i++) {
