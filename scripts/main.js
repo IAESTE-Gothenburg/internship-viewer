@@ -15,12 +15,13 @@ document.addEventListener('DOMContentLoaded', function(){
 	addNavButtons();
 	navButtons = document.getElementsByTagName('footer')[0].getElementsByTagName('button');
 	
-	addInternships(0, 'E');
+	addInternships(0, 'A');
 });
 
 function addInternships(target, section) {
 	mainContent.innerHTML = '';
 	var internships = getInternships(section);
+	internships = internships.concat(OTHER);
 	for (var i = 0; i < internships.length; i++) {
 		var path = PATH + internships[i];
 
@@ -31,6 +32,7 @@ function addInternships(target, section) {
 		// Creates img
 		var image = document.createElement('img');
 		image.src = path;
+		image.setAttribute('onerror',"this.style.display='none'");
 		image.onclick = displayInternship;
 		
 		// Append content
@@ -58,7 +60,7 @@ function getInternships(section) {
 	    case 'E':
 	    	return E;
 	    case 'Fbw':
-	    	return Fbw
+	    	return Fbw;
 	    case 'H':
 	    	return H;
 	    case 'I':
@@ -80,7 +82,7 @@ function getInternships(section) {
 	    case 'Z':
 	    	return Z;
 	    default:
-	    	return [];
+	    	return OTHER;
 	}
 }
 
