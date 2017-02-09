@@ -47,6 +47,7 @@ footer {
   bottom: 0;
   height: 10vh;
   background-color: snow;
+  border-top: 1px solid lightgrey;
   z-index: 100; }
   footer nav.container {
     display: flex;
