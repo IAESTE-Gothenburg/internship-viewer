@@ -1,17 +1,17 @@
+var b = 0;
 
 function addNavButtons() {
 	for (var i = 0; i < SECTIONS.length; i++) {
-		var button = document.createElement('button');
-		button.classList.add('nav-button');
-		button.setAttribute('onclick', 'addInternships(' + i + ', "' + SECTIONS[i] + '")');
-		if (i == 0) {
-			button.classList.add('active-nav');	
+		if (checkSection(SECTIONS[i])) {
+			var button = document.createElement('button');
+			button.classList.add('nav-button');
+			button.setAttribute('onclick', 'addInternships(' + b++ + ', "' + SECTIONS[i] + '")');
+			var image = document.createElement('img');
+			image.src = 'images/icons/' + SECTIONS[i] + '.png';
+			button.appendChild(image);
+			addTextElement('h6', SECTIONS[i], button);
+			nav.appendChild(button);
 		}
-		var image = document.createElement('img');
-		image.src = 'images/icons/' + SECTIONS[i] + '.png';
-		button.appendChild(image);
-		addTextElement('h6', SECTIONS[i], button);
-		nav.appendChild(button);
 	}
 }
 
@@ -28,5 +28,9 @@ function displayInternship(event) {
 }
 
 function hideInternship() {
-	display.style.display = 'none'
+	display.style.display = 'none';
+}
+
+function checkSection(section) {
+	return getInternships(section).length > 0;
 }

@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function(){
 	mainContent = document.getElementsByTagName('main')[0];
 	addNavButtons();
 	navButtons = document.getElementsByTagName('footer')[0].getElementsByTagName('button');
-	
-	addInternships(0, 'A');
+
+	addInternships(0, navButtons[0].getElementsByTagName('h6')[0].innerHTML);
 });
 
 function addInternships(target, section) {
@@ -35,7 +35,7 @@ function addInternships(target, section) {
 		image.src = path;
 		image.setAttribute('onerror',"this.style.display='none'");
 		image.onclick = displayInternship;
-		
+
 		// Append content
 		container.appendChild(image);
 		mainContent.appendChild(container);
@@ -86,9 +86,3 @@ function getInternships(section) {
 	    	return OTHER;
 	}
 }
-
-
-
-
-
-
