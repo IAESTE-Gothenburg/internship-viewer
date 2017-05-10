@@ -69,7 +69,8 @@ footer {
       margin: 0 7px;
       padding: 2px 0;
         padding-top: 4px;
-      background: snow; }
+      background: snow;
+      outline: none; }
       footer nav.container .nav-button img {
         height: 6vh;
         width: auto; }
