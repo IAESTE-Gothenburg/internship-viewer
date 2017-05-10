@@ -32,5 +32,5 @@ function hideInternship() {
 }
 
 function checkSection(section) {
-	return getInternships(section).length > 0;
+	return getInternships(section).length + OTHER.length > 0;
 }
