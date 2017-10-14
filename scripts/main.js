@@ -1,88 +1,57 @@
 
 const PATH = 'images/internships/'
 
-var mainContent;
-var navButtons;
-var nav;
-var display;
-var image;
+let mainContent;
+let navButtons;
+let nav;
+let display;
+let image;
 
-document.addEventListener('DOMContentLoaded', function(){
-	display = document.getElementsByTagName('article')[0];
-	image = display.getElementsByTagName('img')[0];
-	nav = document.getElementsByTagName('nav')[0];
-	mainContent = document.getElementsByTagName('main')[0];
+document.addEventListener('DOMContentLoaded', () => {
+	display = document.querySelector('article');
+	image = display.querySelector('img');
+	nav = document.querySelector('nav');
+	mainContent = document.querySelector('main');
 	addNavButtons();
-	navButtons = document.getElementsByTagName('footer')[0].getElementsByTagName('button');
-
-	addInternships(0, navButtons[0].getElementsByTagName('h6')[0].innerHTML);
+	navButtons = document.querySelectorAll('footer button');
+	addInternships();
 });
 
-function addInternships(target, section) {
+addInternships = event => {
 	mainContent.innerHTML = '';
 	mainContent.scrollLeft = 0;
-	var internships = getInternships(section);
-	internships = internships.concat(OTHER);
-	for (var i = 0; i < internships.length; i++) {
-		var path = PATH + internships[i];
+	let target = event ? event.target : navButtons[0];
+	let internships = SECTIONS[target.getAttribute('data-section')].concat(OTHER);
+
+	internships.forEach( internship => {
+		let path = PATH + internship;
 
 		// Creates container for internship
-		var container = document.createElement('div');
+		let container = document.createElement('div');
 		container.classList.add('internship');
 
 		// Creates img
-		var image = document.createElement('img');
+		let image = document.createElement('img');
 		image.src = path;
-		image.setAttribute('onerror',"this.style.display='none'");
+		image.setAttribute('onerror', "this.style.display='none'");
 		image.onclick = displayInternship;
 
 		// Append content
 		container.appendChild(image);
 		mainContent.appendChild(container);
-	}
-	if (internships.length == 0) {
-		var text = 'Finns inga internships relaterade till den här utbildningen just nu men återkom snart så kanske det finns!';
-		addTextElement('h1', text, mainContent)
-	}
-	for (var i = 0; i < navButtons.length; i++) {
-		navButtons[i].classList.remove('active-nav');
-	}
-	navButtons[target].classList.add('active-nav');
+	});
+
+	navButtons.forEach( navButton => {
+		navButton.classList.remove('active-nav');
+	});
+
+	target.classList.add('active-nav');
 }
 
-function getInternships(section) {
-	switch(section) {
-	    case 'A':
-	    	return A;
-	    case 'AE':
-	        return AE;
-	    case 'D':
-	    	return D;
-	    case 'E':
-	    	return E;
-	    case 'Fbw':
-	    	return Fbw;
-	    case 'H':
-	    	return H;
-	    case 'I':
-	        return I;
-	    case 'IT':
-	    	return IT;
-	    case 'K':
-	    	return K;
-	    case 'KfKb':
-	    	return KfKb;
-	    case 'M':
-	    	return M;
-	    case 'S':
-	        return S;
-	    case 'TD':
-	    	return TD;
-	    case 'V':
-	    	return V;
-	    case 'Z':
-	    	return Z;
-	    default:
-	    	return OTHER;
-	}
+addTextElement = (type, text, appendTo) => {
+	let element = document.createElement(type);
+	let textNode = document.createTextNode(text)
+	element.appendChild(textNode);
+	appendTo.appendChild(element);
 }
+
