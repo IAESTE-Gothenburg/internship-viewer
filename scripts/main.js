@@ -21,6 +21,7 @@ addInternships = event => {
 	mainContent.innerHTML = '';
 	mainContent.scrollLeft = 0;
 	let target = event ? event.target : navButtons[0];
+	if (target.nodeName !== "BUTTON") target = target.parentNode;
 	let internships = SECTIONS[target.getAttribute('data-section')].concat(OTHER);
 
 	internships.forEach( internship => {
@@ -44,14 +45,6 @@ addInternships = event => {
 	navButtons.forEach( navButton => {
 		navButton.classList.remove('active-nav');
 	});
-
 	target.classList.add('active-nav');
-}
-
-addTextElement = (type, text, appendTo) => {
-	let element = document.createElement(type);
-	let textNode = document.createTextNode(text)
-	element.appendChild(textNode);
-	appendTo.appendChild(element);
 }
 
